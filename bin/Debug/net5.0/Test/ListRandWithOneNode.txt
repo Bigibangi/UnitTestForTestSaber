@@ -1,0 +1,5 @@
+Count:1
+Prev:NULL
+Next:NULL
+Rand:NULL
+Data:Test
