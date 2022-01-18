@@ -49,12 +49,14 @@ namespace TestListRandSaber
                 listRand.AddNode(listNode);
                 listRand.Serialize(fs);
             }
+            var otherListRand = new ListRand();
             using (var fr = new FileStream("Test\\ListRandWithOneNode.txt", FileMode.Open))
             {
-                listRand.Deserialize(fr);
+                otherListRand.Deserialize(fr);
             }
-            Assert.AreEqual(listRand.Count, 1);
+            Assert.AreEqual(otherListRand.Count, 1);
             Assert.AreEqual(listRand.Head.Data, listNode.Data);
+            Assert.AreEqual(listRand.Head.Data, otherListRand.Head.Data);
         }
     }
 }
